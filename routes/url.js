@@ -8,4 +8,6 @@ router.get('/:id', urlController.redirectToActualUrlHandler )
 
 router.get('/analytics/:id', urlController.getUrlAnalyticsHandler);
 
+router.post('/', urlController.handleUrlShortner)
+
 module.exports = router;

@@ -32,6 +32,22 @@ async function getUrlAnalyticsHandler(req, res) {
     res.json({totalVisits : analytics.visitHistory.length, analytics})
 }
 
+async function handleUrlShortner(req,res) {
+    const body = req.body;
+
+    if(!body.url) {
+        return res.render('home', { error: 'Please enter url'});
+    }
+    const shortId = nanoid(8);
+    const shortenUrl = await URL.create({
+        shortId: shortId,
+        redirectedUrl: body.url,
+        visitHistory: []
+    })   
+    return res.render('home', { id: shortId});
+}
+
 module.exports= {
-    generateShortUrlHandler, redirectToActualUrlHandler, getUrlAnalyticsHandler
+    generateShortUrlHandler, redirectToActualUrlHandler, getUrlAnalyticsHandler,
+    handleUrlShortner
 }
