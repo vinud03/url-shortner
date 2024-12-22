@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+</head>
+<body>
+    <h1>Signup</h1>
+    <div>
+        <form method="post" action="/user/api/signup">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" required name="name" id="userName" placeholder="John Doe">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="text" required name="email" id="userEmail" placeholder="example@gmail.com">
+            </div>
+            <div>
+                <label for="passkey">Password</label>
+                <input type="password" required name="passkey" id="userPassword" placeholder="********">
+            </div>
+            <button type="submit">SignUp</button>
+        </form>
+    </div>
+</body>
+</html>

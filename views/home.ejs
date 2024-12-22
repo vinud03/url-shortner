@@ -10,10 +10,8 @@
 <body>
     <h1>Welcome to Url Shortner</h1>
 
-    <h3> enter your url below to shorten </h3>
-
     <% if (locals.id) { %>
-        <p>URL Generated: http://localhost:8001/url/<%= id %>
+        <p>URL Generated: http://localhost:8001/url/geturl/<%= id %>
         </p>
         <% } %>
 
@@ -40,6 +38,7 @@
                         </tbody>
                     </table>
                     <% } else { %>
+                        <h3> enter your url below to shorten </h3>
                         <div>
                             <form method="post" action="/url">
                                 <label for="Enter your url here"></label>

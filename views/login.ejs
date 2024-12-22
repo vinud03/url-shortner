@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <style>
+        .text-danger {
+            color: red;
+        }
+    </style>
+    <h1>Login</h1>
+    <div>
+        <form method="post" action="/user/api/login">
+            <div>
+                <label for="email">Email</label>
+                <input type="text" required name="email" id="userEmail" placeholder="example@gmail.com">
+            </div>
+            <div>
+                <label for="passkey">Password</label>
+                <input type="password" required name="passkey" id="userPassword" placeholder="********">
+            </div>
+            <button type="submit">login</button>
+        </form>
+    </div>
+    <% if (locals.error) { %>
+        <div> 
+            <p class="text-danger"><%= locals.error %></p>
+        </div>
+    <% } %>
+</body>
+</html>
