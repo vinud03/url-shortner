@@ -11,7 +11,8 @@ async function generateShortUrlHandler(req, res) {
     const shortenUrl = await URL.create({
         shortId: shortId,
         redirectedUrl: body.url,
-        visitHistory: []
+        visitHistory: [],
+        cretaedBy: req.user._id
     })   
     return res.json(shortenUrl);
 }
@@ -42,7 +43,8 @@ async function handleUrlShortner(req,res) {
     const shortenUrl = await URL.create({
         shortId: shortId,
         redirectedUrl: body.url,
-        visitHistory: []
+        visitHistory: [],
+        cretaedBy: req.user._id
     })   
     return res.render('home', { id: shortId});
 }
